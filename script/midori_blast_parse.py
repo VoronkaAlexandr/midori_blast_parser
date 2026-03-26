@@ -86,7 +86,6 @@ def parse_midori_blast_by_class(class_name="all", genbank_name="last", save_dir=
         )
 
         for i, zip_name in enumerate(zip_files, start=1):
-            print(zip_name)
             zip_path = os.path.join(folder, zip_name)
             gene = zip_name.split("_")[-2]
 
@@ -114,7 +113,7 @@ def parse_midori_blast_by_class(class_name="all", genbank_name="last", save_dir=
                     for record in read_fasta_from_zip(zip_path):
                         header = record.description
                         split_class_name = header.split(";")[3].split("_")[:-1]
-                        selected_class_name = "_".join(split_class_name)
+                        selected_class_name = "_".join(split_class_name).lower()
                         if selected_class_name == class_name:
                             split_name = header.split(";")[-1].split("_")[0:2]
                             name = "_".join(split_name)
