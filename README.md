@@ -26,8 +26,8 @@ It is especially useful for preparing class-specific datasets, for example for *
 ├── data/
 │   ├── longest_fasta/          # downloaded MIDORI longest FASTA ZIP archives
 │   ├── uniq_fasta/             # downloaded MIDORI uniq FASTA ZIP archives
-│   ├── longest_aves.csv        # example output table
-│   └── uniq_aves.csv           # example output table
+│   ├── longest.csv        # example output table
+│   └── uniq.csv           # example output table
 │
 ├── script/
 │   └── midori_blast_parse.py   # main MIDORI parsing script
