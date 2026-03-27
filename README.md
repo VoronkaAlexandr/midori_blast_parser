@@ -28,11 +28,14 @@ pip install -r requirements.txt
 4. Run the script
 Examples:
 python script/midori_blast_parse.py
+
 python script/midori_blast_parse.py --class_name aves --genbank_name last
+
 python script/midori_blast_parse.py \
   --class_name aves \
   --genbank_name GenBank269_2025-12-09 \
   --save_dir ../data
+  
 python script/midori_blast_parse.py --class_name all
 
 ---
