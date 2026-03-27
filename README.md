@@ -27,6 +27,7 @@ It is especially useful for preparing class-specific datasets, for example for *
 pip install -r requirements.txt
 4. Run the script
 Examples:
+
 python script/midori_blast_parse.py
 
 python script/midori_blast_parse.py --class_name aves --genbank_name last
