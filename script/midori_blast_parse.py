@@ -194,8 +194,38 @@ def parse_midori_blast_by_class(class_name="all", genbank_name="last", save_dir=
     print(f"{save_dir}/{selected_genbank_name}_{class_name}_longest.csv")
     print(f"{save_dir}/{selected_genbank_name}_{class_name}_uniq.csv")
 
+import argparse
+
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Download and parse MIDORI BLAST FASTA files by class"
+    )
 
-    #parse_midori_blast_by_class(class_name="all", genbank_name="last", save_dir="../data")
+    parser.add_argument(
+        "--class_name",
+        type=str,
+        default="all",
+        help='Taxonomic class (e.g. "aves") or "all"'
+    )
 
-    parse_midori_blast_by_class(class_name="aves", genbank_name="GenBank269_2025-12-09", save_dir="../data")
+    parser.add_argument(
+        "--genbank_name",
+        type=str,
+        default="last",
+        help='GenBank release (e.g. "GenBank269_2025-12-09") or "last"'
+    )
+
+    parser.add_argument(
+        "--save_dir",
+        type=str,
+        default="../data",
+        help="Directory to save downloaded data and results"
+    )
+
+    args = parser.parse_args()
+
+    parse_midori_blast_by_class(
+        class_name=args.class_name,
+        genbank_name=args.genbank_name,
+        save_dir=args.save_dir
+    )
